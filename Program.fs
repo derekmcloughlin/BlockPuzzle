@@ -130,8 +130,7 @@ let draw i =
   |> Seq.reduce ($)
 
 
-Async.StartImmediate <| async { 
-  for i in 1 .. 64 do 
-    do! Async.Sleep(200)
-    Fun.show (draw i) }
+for i in 1 .. 64 do 
+    System.Threading.Thread.Sleep(200)
+    Fun.show (draw i)
 
